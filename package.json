@@ -1,0 +1,28 @@
+{
+  "name": "create-postgresql",
+  "version": "1.0.0",
+  "description": "nodejs CLI app that automates the creation of postgresql docker containers",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "npx nodemon start postgresql",
+    "build": "npx tsc"
+  },
+  "author": "Pedro Dutra",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^10.0.1",
+    "dotenv": "^16.0.3",
+    "inquirer": "^9.1.5"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.15.12",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4"
+  }
+}
