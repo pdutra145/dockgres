@@ -8,8 +8,8 @@ const program = new Command("dockerpostgres");
 const validStartOptions = ["postgresql", "pgadmin"];
 const postgres = inquirer.createPromptModule();
 const pgadmin = inquirer.createPromptModule();
-if (!fs.existsSync("../.env")) {
-    fs.writeFileSync("../.env", "# Setting env variables");
+if (!fs.existsSync(".env")) {
+    fs.writeFileSync(".env", "# Setting env variables");
 }
 if (process.argv[2] !== "build" &&
     (process.argv.length !== 4 ||
