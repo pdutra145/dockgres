@@ -1,6 +1,7 @@
 version: "3"
 services:
   postgresql:
+    restart: always
     image: postgres
     env_file:
       - .env
@@ -10,12 +11,14 @@ services:
     volumes:
       - dbdata:/var/lib/postgresql/data
   pgadmin:
+    restart: always
     image: dpage/pgadmin4
     env_file:
       - .env
     container_name: "${PGADMIN_NAME}"
     ports:
       - "8080:${PGADMIN_PORT}"
+    network_mode: "host"
 
 volumes:
   dbdata:
