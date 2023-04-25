@@ -5,26 +5,25 @@ import pgadminQuestions from "./questions/pgadmin.js";
 import inquirer from "inquirer";
 import fs from "fs";
 const program = new Command("dockerpostgres");
-const validStartOptions = ["postgresql", "pgadmin"];
+// type startOptions = "postgresql" | "pgadmin";
+// const validStartOptions: startOptions[] = ["postgresql", "pgadmin"];
 const postgres = inquirer.createPromptModule();
 const pgadmin = inquirer.createPromptModule();
 if (!fs.existsSync(".env")) {
     fs.writeFileSync(".env", "# Setting env variables");
 }
-if (process.argv[2] !== "build" &&
-    (process.argv.length !== 4 ||
-        !validStartOptions.includes(process.argv[3]))) {
-    throw new Error("Invalid Args");
-}
 program
-    .command("build")
-    .argument("<service>", "build postgresql or pgadmin service")
+    .command("set")
+    .argument("<service>", "set postgresql or pgadmin env variables")
     .action(async (service) => {
     if (service == "postgresql") {
         await actions(".env", postgres, postgresQuestions);
     }
-    else {
+    else if (service == "pgadmin") {
         await actions(".env", pgadmin, pgadminQuestions);
+    }
+    else {
+        throw new Error("Invalid Service");
     }
 });
 program.parse(process.argv);

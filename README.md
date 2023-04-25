@@ -28,9 +28,9 @@ Make sure you have installed in your system:
 
 <br>
 
-### dockgres build \<service>
+### dockgres set \<service>
 
-`dockgres build <service>` is a tool that facilitates the creation of PostgresSQL and pgadmin containers
+`dockgres set <service>` is a tool that facilitates the creation of PostgresSQL and pgadmin containers
 by providing a simple and cool CLI interface. It uses packages such as Inquirer, Commander, and Chalk to get
 that done. The service is an option that defines what container you want to build. It will ask you for important
 enviroment variables to set up your docker container. There are two options:
@@ -83,9 +83,9 @@ Certifique-se de ter instalado no seu sistema:
 
 <br>
 
-### dockgres build \<serviço>
+### dockgres set \<serviço>
 
-`dockgres build <serviço>` é uma ferramenta que facilita a criação de containers PostgresSQL e pgadmin, fornecendo uma interface CLI simples e amigável. Ele utiliza pacotes como Inquirer, Commander e Chalk para isso. O serviço é uma opção que define qual container você deseja construir. Ele irá solicitar importantes variáveis de ambiente para configurar seu container do Docker. Existem duas opções:
+`dockgres set <serviço>` é uma ferramenta que facilita a criação de containers PostgresSQL e pgadmin, fornecendo uma interface CLI simples e amigável. Ele utiliza pacotes como Inquirer, Commander e Chalk para isso. O serviço é uma opção que define qual container você deseja construir. Ele irá solicitar importantes variáveis de ambiente para configurar seu container do Docker. Existem duas opções:
 
 - **postgresql**: constrói o container que será baseado na imagem oficial do PostgresSQL.
 - **pgadmin**: constrói o container baseado na imagem do pgadmin.
