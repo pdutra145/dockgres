@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if ! grep -q "dockgres" ~/.bashrc; then
     source ~/.bashrc
 
@@ -20,7 +21,7 @@ if [ "$1" = "create" ]; then
         echo "error: Containers already created"
         exit 1
     else
-        docker-compose up -d
+        docker-compose up -d 
     fi
 elif [ "$1" = "set" ]; then
     if [ -z "$2" ]; then
