@@ -3,13 +3,15 @@ services:
   postgresql:
     restart: always
     image: postgres
+    hostname: postgresql
     env_file:
       - .env
     container_name: ${POSTGRES_DB}
     ports:
       - "5432:5432"
     volumes:
-      - dbdata:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data
+
   pgadmin:
     restart: always
     image: dpage/pgadmin4
@@ -18,7 +20,8 @@ services:
     container_name: ${PGADMIN_NAME}
     ports:
       - "8080:${PGADMIN_PORT}"
-    network_mode: "host"
+    volumes:
+      - /home/pdutra/Downloads:/Downloads
 
 volumes:
-  dbdata:
+  postgres:
