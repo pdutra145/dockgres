@@ -54,13 +54,31 @@ Use `dockgres start` to start your container app and `dockgres end` to end your
 container app.
 
 <br>
+
+### Remove Dockgres from your sys
+
+Use `dockgres kill` to remove dockgres completely from your system. After that, make sure you close the terminal and open a new one or restart your shell session.
+
+**Note:** _It is recommended to close the terminal and open a new instance_
+
+<br>
+
+### Reinstall Dockgres
+
+If you decide to reinstall the script, you will have to manually `cd` to the dockgres directory and run `bash ./scripts/dockgres.sh`
+
+<br>
 <br>
 
 :brazil:
 
+# Dockgres
+
+:br:
+
 ## Descrição
 
-O Dockgres é uma ferramenta que facilita a configuração do PostgresSQL com containers do Docker. Ele utiliza o nodejs, shell scripting e o docker-compose para tornar isso possível.
+Dockgres é uma ferramenta que facilita sua vida na configuração do PostgresSQL com containers docker. Ele usa nodejs, scripts shell e docker-compose para tornar isso possível.
 
 ## Requisitos
 
@@ -74,31 +92,46 @@ Certifique-se de ter instalado no seu sistema:
 
 ### Linux :penguin:
 
-1. Crie um novo diretório chamado "dockgres" no seu sistema com o comando `mkdir dockgres`
-2. Clone este repositório com o comando `git clone https://github.com/pdutra145/dockgres.git`
+1. Crie um novo diretório chamado dockgres no seu sistema com `mkdir dockgres`
+2. Clone este repositório com `git clone https://github.com/pdutra145/dockgres.git`
 3. Execute o script acessando `sh ./scripts/dockgres.sh`
-4. Você está pronto para usar!
+4. Você está pronto para usar!!!
 
-## Comandos do Dockgres
+## Comandos Dockgres
 
 <br>
 
 ### dockgres set \<serviço>
 
-`dockgres set <serviço>` é uma ferramenta que facilita a criação de containers PostgresSQL e pgadmin, fornecendo uma interface CLI simples e amigável. Ele utiliza pacotes como Inquirer, Commander e Chalk para isso. O serviço é uma opção que define qual container você deseja construir. Ele irá solicitar importantes variáveis de ambiente para configurar seu container do Docker. Existem duas opções:
+`dockgres set <serviço>` é uma ferramenta que facilita a criação de contêineres PostgresSQL e pgadmin fornecendo uma interface de linha de comando simples e elegante. Ele usa pacotes como Inquirer, Commander e Chalk para fazer isso. O serviço é uma opção que define qual contêiner você deseja criar. Ele solicitará que você defina as variáveis ​​de ambiente importantes para configurar seu contêiner docker. Existem duas opções:
 
-- **postgresql**: constrói o container que será baseado na imagem oficial do PostgresSQL.
-- **pgadmin**: constrói o container baseado na imagem do pgadmin.
-
-<br>
-
-### Criando e Deletando contêineres
-
-- Execute o comando `dockgres create` para construir os contêineres e a rede utilizando o arquivo docker compose (sem executar).
-- Execute o comando `dockgres delete` para deletar os contêineres e a rede.
+- **postgresql**: cria o contêiner que será baseado na imagem oficial do PostgresSQL.
+- **pgadmin**: cria o contêiner baseado na imagem pgadmin.
 
 <br>
 
-### Inicializando contêineres
+### Criando e excluindo contêineres
 
-Com esses dois containers, você poderá executar sua aplicação Postgres. Use `dockgres start` para iniciar o aplicativo do seu container e `dockgres end` para encerrar o aplicativo do seu container.
+- Execute `dockgres create` para criar os contêineres e a rede com o arquivo docker compose (sem executá-los).
+- Execute `dockgres delete` para excluir os contêineres e a rede.
+
+<br>
+
+### Iniciando contêineres
+
+Com esses dois contêineres, você poderá executar sua aplicação postgres.
+Use `dockgres start` para iniciar sua aplicação em contêiner e `dockgres end` para encerrar sua aplicação em contêiner.
+
+<br>
+
+### Removendo Dockgres do seu sistema
+
+Use `dockgres kill` para remover completamente o dockgres do seu sistema. Depois disso, certifique-se de fechar o terminal e abrir um novo ou reiniciar sua sessão shell.
+
+**Nota:** _Recomenda-se fechar o terminal e abrir uma nova instância_
+
+<br>
+
+### Reinstalando o Dockgres
+
+Se você decidir reinstalar o script, deverá manualmente `cd` para o diretório dockgres e executar `bash ./scripts/dockgres.sh`

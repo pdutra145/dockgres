@@ -5,6 +5,7 @@ if ! grep -q "dockgres" ~/.bashrc; then
     source ~/.bashrc
 
     dir=$(dirname "$(readlink -f ./scripts/dockgres.sh)")
+    echo "$dir"
     echo "alias dockgres='$dir/dockgres.sh'" >> ~/.bashrc
 
     # Add the COMPOSE_DIR environment variable to ~/.bashrc
@@ -36,6 +37,8 @@ elif [ "$1" = "end" ]; then
     docker-compose stop
 elif [ "$1" = "delete" ]; then
     docker-compose down
+elif [ "$1" = "kill" ]; then
+    bash ./scripts/kill.sh
 else
     echo "error: unrecognized command '$1'"
     cd -
