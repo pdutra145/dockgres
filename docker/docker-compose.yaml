@@ -5,7 +5,7 @@ services:
     image: postgres
     hostname: postgresql
     env_file:
-      - .env
+      - ../.env
     container_name: ${POSTGRES_DB}
     ports:
       - "5432:5432"
@@ -18,7 +18,7 @@ services:
     restart: always
     image: dpage/pgadmin4
     env_file:
-      - .env
+      - ../.env
     container_name: ${PGADMIN_NAME}
     ports:
       - "8080:${PGADMIN_PORT}"
