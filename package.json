@@ -6,14 +6,14 @@
   "type": "module",
   "scripts": {
     "start:dev": "npx nodemon",
+    "start": "node ./build/index.js set",
     "build": "npx tsc"
   },
   "author": "Pedro Dutra",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^5.2.0",
+    "chalk": "4.1.2",
     "commander": "^10.0.1",
-    "dotenv": "^16.0.3",
     "inquirer": "^9.1.5"
   },
   "devDependencies": {
@@ -21,7 +21,6 @@
     "@types/node": "^18.15.12",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
-    "tslib": "^2.5.0",
     "typescript": "^5.0.4"
   }
 }

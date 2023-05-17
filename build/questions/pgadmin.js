@@ -8,41 +8,41 @@ var Names;
     Names["email"] = "PGADMIN_DEFAULT_EMAIL";
     Names["password"] = "PGADMIN_DEFAULT_PASSWORD";
 })(Names || (Names = {}));
-const intro = {
+var intro = {
     name: Names.confirmation,
     type: "confirm",
     message: "Do you want to run pgadmin with Docker?",
-    when: () => validateEnvFile("pgadmin"),
+    when: function () { return validateEnvFile("pgadmin"); },
 };
-const portName = {
+var portName = {
     name: Names.port,
     type: "number",
     message: "What will be the port for pgadmin ? (default=82)",
     default: 82,
-    when: (opt) => opt.confirmation,
+    when: function (opt) { return opt.confirmation; },
 };
-const containerName = {
+var containerName = {
     name: Names.container,
     type: "input",
     message: "What will be the container name for pgadmin ? (default=my-pgadmin)",
     default: "my-pgadmin",
-    when: (opt) => opt.confirmation,
+    when: function (opt) { return opt.confirmation; },
 };
-const email = {
+var email = {
     name: Names.email,
     type: "input",
     message: "What will be the email for pgadmin?",
-    when: (opt) => opt.confirmation,
+    when: function (opt) { return opt.confirmation; },
     validate: requiredInputs,
 };
-const password = {
+var password = {
     name: Names.password,
     type: "password",
     message: "What will be the password for pgadmin?",
-    when: (opt) => opt.confirmation,
+    when: function (opt) { return opt.confirmation; },
     validate: requiredInputs,
 };
-const pgadminQuestions = [
+var pgadminQuestions = [
     intro,
     portName,
     containerName,

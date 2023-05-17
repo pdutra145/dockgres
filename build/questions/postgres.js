@@ -9,50 +9,50 @@ var Names;
     Names["username"] = "POSTGRES_USER";
     Names["password"] = "POSTGRES_PASSWORD";
 })(Names || (Names = {}));
-const transformer = (input) => {
+var transformer = function (input) {
     return chalk.bold(chalk.blue(input));
 };
-const intro = {
+var intro = {
     name: Names.confirmation,
     type: "confirm",
     message: "Do you want to run PostgresSQL with Docker?",
     // suffix: console.clear(),
-    filter: (inp, confirm) => {
+    filter: function (inp, confirm) {
         if (!inp) {
             return process.exit();
         }
     },
-    when: () => validateEnvFile("postgres"),
+    when: function () { return validateEnvFile("postgres"); },
 };
-const portName = {
+var portName = {
     name: Names.port,
     type: "number",
     message: "What will be the port for PostgresSQL ? (default=5432)",
     default: 5432,
-    when: (opt) => opt.confirmation,
+    when: function (opt) { return opt.confirmation; },
 };
-const containerName = {
+var containerName = {
     name: Names.container,
     type: "input",
     message: "What will be the container name for PostgresSQL ? (default=postgresql)",
     default: "postgresql",
-    when: (opt) => opt.confirmation,
+    when: function (opt) { return opt.confirmation; },
 };
-const username = {
+var username = {
     name: Names.username,
     type: "input",
     message: "What will be the username for PostgresSQL?",
-    when: (opt) => opt.confirmation,
+    when: function (opt) { return opt.confirmation; },
     validate: requiredInputs,
     transformer: transformer,
 };
-const password = {
+var password = {
     name: Names.password,
     type: "password",
     message: "What will be the password for PostgresSQL?",
-    when: (opt) => opt.confirmation,
+    when: function (opt) { return opt.confirmation; },
 };
-const postgresQuestions = [
+var postgresQuestions = [
     intro,
     portName,
     containerName,

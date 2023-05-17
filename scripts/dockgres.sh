@@ -17,7 +17,7 @@ fi
 
 cd $COMPOSE_DIR
 
-if [ "$1" = "create" ]; then
+if [ "$1" = "up" ]; then
     if docker ps -a --format '{{.Names}}' | grep -qE '(postgresql|my-pgadmin)'; then
         echo "error: Containers already created"
         exit 1
@@ -33,9 +33,9 @@ elif [ "$1" = "set" ]; then
     fi
 elif [ "$1" = "start" ]; then
     docker-compose start
-elif [ "$1" = "end" ]; then
+elif [ "$1" = "stop" ]; then
     docker-compose stop
-elif [ "$1" = "delete" ]; then
+elif [ "$1" = "down" ]; then
     docker-compose down
 elif [ "$1" = "kill" ]; then
     bash ./scripts/kill.sh

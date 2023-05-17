@@ -5,7 +5,7 @@ import pgadminQuestions from "./questions/pgadmin.js";
 import inquirer from "inquirer";
 import fs from "fs";
 
-const program = new Command("dockerpostgres");
+const program = new Command("dockgres");
 
 // type startOptions = "postgresql" | "pgadmin";
 // const validStartOptions: startOptions[] = ["postgresql", "pgadmin"];
