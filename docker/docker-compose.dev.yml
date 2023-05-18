@@ -1,0 +1,26 @@
+version: "3"
+services:
+  dev:
+    container_name: dockgres-dev
+    build:
+      context: ..
+      dockerfile: "./docker/Dockerfile.dev"
+    image: dockgres
+    stdin_open: true
+    tty: true
+    volumes:
+      - "dockgres_data:/app"
+      - "~/.gitconfig:/etc/gitconfig"
+  util:
+    container_name: dockgres-util
+    build:
+      context: ..
+      dockerfile: "./docker/Dockerfile.util"
+    image: node-util
+    stdin_open: true
+    tty: true
+    volumes:
+      - ..:/app
+
+volumes:
+  dockgres_data:

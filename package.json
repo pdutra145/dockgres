@@ -1,13 +1,16 @@
 {
   "name": "dockgres",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "nodejs CLI app that automates the creation of postgresql docker containers",
   "main": "./build/index.js",
   "type": "module",
   "scripts": {
     "start:dev": "npx nodemon",
     "start": "node ./build/index.js set",
-    "build": "npx tsc"
+    "build": "npx tsc",
+    "build:docker": "docker-compose -f ./docker/docker-compose.dev.yml up -d --build",
+    "docker:util": "docker-compose -f ./docker/docker-compose.dev.yml run util start",
+    "docker:dev": "docker-compose -f ./docker/docker-compose.dev.yml run dev bash"
   },
   "author": "Pedro Dutra",
   "license": "ISC",
