@@ -46,7 +46,7 @@ var program = new Command("dockgres");
 var postgres = inquirer.createPromptModule();
 var pgadmin = inquirer.createPromptModule();
 if (!fs.existsSync(".env")) {
-    fs.writeFileSync(".env", "# Setting env variables");
+    fs.writeFileSync(".env", "alias npmr='npm run'\n# Setting env variables");
 }
 program
     .command("set")

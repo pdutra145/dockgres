@@ -5,12 +5,15 @@
   "main": "./build/index.js",
   "type": "module",
   "scripts": {
+    "test": "echo 'running!'",
     "start:dev": "npx nodemon",
     "start": "node ./build/index.js set",
     "build": "npx tsc",
-    "build:docker": "docker-compose -f ./docker/docker-compose.dev.yml up -d --build",
-    "docker:util": "docker-compose -f ./docker/docker-compose.dev.yml run util start",
-    "docker:dev": "docker-compose -f ./docker/docker-compose.dev.yml run dev bash"
+    "docker:build": "docker-compose -f ./docker/docker-compose.dev.yml up -d --build",
+    "docker:up": "docker-compose -f ./docker/docker-compose.dev.yml up -d",
+    "docker:npm": "docker-compose -f ./docker/docker-compose.dev.yml run --rm util start",
+    "docker:dev": "docker-compose -f ./docker/docker-compose.dev.yml exec dev bash",
+    "docker:down": "docker-compose -f ./docker/docker-compose.dev.yml down"
   },
   "author": "Pedro Dutra",
   "license": "ISC",
